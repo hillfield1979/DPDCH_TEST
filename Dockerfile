@@ -10,6 +10,8 @@ RUN apk add --no-cache --virtual .build-deps \
     ca-certificates gcc postgresql-dev linux-headers musl-dev \
     libffi-dev jpeg-dev zlib-dev \
     && pip install -r requirements.txt
+RUN pip install django-heroku==0.3.1 --no-deps
+# RUN pip install --install-option="--no-deps" django-heroku==0.3.1 
 
 # Run the app.  CMD is required to run on Heroku
 # $PORT is set by Heroku
